@@ -4,6 +4,7 @@
 
 <html>
 <head runat="server">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -11,8 +12,19 @@
 <body>
     <form id="form1" runat="server">
         <div id="header">
-            <p><a href="https://github.com/ParkerKalthoff/Assignment-4-Parker-Noah">Github Page</a></p>
-            <p>Hi, <asp:Label runat="server" ID="lblUserName" Text="First Last"></asp:Label> | <asp:LoginStatus runat="server"></asp:LoginStatus></p>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                Hi,  <asp:Label runat="server" ID="lblUserName" Text="First Last"></asp:Label>
+                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <asp:LoginStatus runat="server" class="nav-link"></asp:LoginStatus>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://github.com/ParkerKalthoff/Assignment-4-Parker-Noah" class="nav-link">Github Page</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
         </div>
 
         <div id="mainContent">

@@ -54,7 +54,7 @@ namespace Assignment_4_Parker_Noah.logonPage
 
                 FormsAuthentication.RedirectFromLoginPage(HttpContext.Current.Session["nUserName"].ToString(), true);
 
-                Response.Redirect("~/[Folder Name]/[ASPX NAME].aspx"); /* Instructor Page */
+                Response.Redirect("~/instructorPage/instructor.aspx"); /* Instructor Page */
             }
             else
                 Response.Redirect("Logon.aspx", true);

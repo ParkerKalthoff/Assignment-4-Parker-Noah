@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="instructorPage\instructor.aspx" />
     <Content Include="logonPage\logon.aspx" />
     <Content Include="memberPage\member.aspx" />
     <Content Include="Web.config" />
@@ -76,6 +77,13 @@
   <ItemGroup>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="instructorPage\instructor.aspx.cs">
+      <DependentUpon>instructor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="instructorPage\instructor.aspx.designer.cs">
+      <DependentUpon>instructor.aspx</DependentUpon>
     </Compile>
     <Compile Include="KarateLinqToSQL.designer.cs">
       <AutoGen>True</AutoGen>
@@ -113,6 +121,7 @@
       <LastGenOutput>KarateLinqToSQL.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="instructorPage\Web.config" />
     <None Include="KarateLinqToSQL.dbml.layout">
       <DependentUpon>KarateLinqToSQL.dbml</DependentUpon>
     </None>

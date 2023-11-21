@@ -24,12 +24,19 @@ namespace Assignment_4_Parker_Noah.MasterPage
 
             int sessionUserID = int.Parse(HttpContext.Current.Session["UserID"].ToString());
 
+            if (HttpContext.Current.Session["UserType"].ToString().Trim() == "Member") { 
             Member myUser = (from x in dbcon.Members
                               where x.Member_UserID == sessionUserID 
                               select x).First();
 
             lblUserName.Text = myUser.MemberFirstName +" "+ myUser.MemberLastName;
-
+            } else if (HttpContext.Current.Session["UserType"].ToString().Trim() == "Instructor")
+            {
+                Instructor myUser = (from x in dbcon.Instructors
+                                     where x.InstructorID == sessionUserID
+                                 select x).First();
+                lblUserName.Text = myUser.InstructorFirstName + " " + myUser.InstructorLastName;
+            }
         }
     }
 }
