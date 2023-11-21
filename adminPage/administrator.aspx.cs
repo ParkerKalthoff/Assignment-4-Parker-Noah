@@ -17,7 +17,7 @@ namespace Assignment_4_Parker_Noah.administratorPage
     {
 
 
-        string connString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\nkalt\\source\\repos\\ParkerKalthoff\\Assignment-4-Parker-Noah\\KarateSchool.mdf;Integrated Security=True;Connect Timeout=30";
+        string connString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\parke\\source\\repos\\ParkerKalthoff\\Assignment-4-Parker-Noah\\KarateSchool.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=False";
         KarateLinqToSQLDataContext dbcon;
 
         public void RefreshData()
@@ -108,8 +108,9 @@ namespace Assignment_4_Parker_Noah.administratorPage
                 //sql connection object
                 using (SqlConnection conn = new SqlConnection(connString))
                 {
-                    string idNumber = deleteMIDTXT.Text.Trim();
-                    string deleteQuery = "DELETE from Member WHERE Member_UserID='" + idNumber + "'";
+                    int idNumber = int.Parse(deleteMIDTXT.Text.Trim());
+                    string deleteQuery2 = "DELETE from Section WHERE Member_ID=" + idNumber;
+                    string deleteQuery = "DELETE from Member WHERE Member_UserID=" + idNumber;
 
                     try
                     {
@@ -117,6 +118,7 @@ namespace Assignment_4_Parker_Noah.administratorPage
                         conn.Open();
 
                         //connect query
+                        SqlCommand sqlcom2 = new SqlCommand(deleteQuery2, conn);
                         SqlCommand sqlcom = new SqlCommand(deleteQuery, conn);
 
                         DialogResult confirmDelete = MessageBox.Show("Are your sure you want to delete the record with idNumber=" + idNumber + "?");
@@ -124,6 +126,7 @@ namespace Assignment_4_Parker_Noah.administratorPage
                         {
                             return;
                         }
+                        sqlcom2.ExecuteNonQuery();
                         sqlcom.ExecuteNonQuery();
                         MessageBox.Show("Delete successful");
                         //Refresh data in the DataGridView
@@ -195,7 +198,7 @@ namespace Assignment_4_Parker_Noah.administratorPage
             string fName = addMFnameTXT.Text.Trim();
             string lName = addMLnameTXT.Text.Trim();
             DateTime dateJoined = Convert.ToDateTime(addMDateTXT.Text.Trim());
-            int phone = Convert.ToInt32(addMPhoneTXT.Text.Trim());
+            long phone = Convert.ToInt64(addMPhoneTXT.Text.Trim());
             string email = addMEmailTXT.Text.Trim();
 
             try
@@ -206,8 +209,7 @@ namespace Assignment_4_Parker_Noah.administratorPage
                     //query
                     string insertQuery = "INSERT INTO Member(Member_UserID, MemberFirstName, " +
                         "MemberLastName, MemberDateJoined, MemberPhoneNumber, MemberEmail)" +
-                        " VALUES('" + memberID + "'," + "'" + fName + "'," + lName + ","
-                        + dateJoined + "," + phone + "," + email + ")";
+                        " VALUES(" + memberID + ",'"  + fName + "','" + lName + "',"+ dateJoined + "," + phone + ",'" + email + "')";
 
                     try
                     {
@@ -243,7 +245,7 @@ namespace Assignment_4_Parker_Noah.administratorPage
             int memberID = Convert.ToInt32(addIIDTXT.Text.Trim());
             string fName = addIFnameTXT.Text.Trim();
             string lName = addILnameTXT.Text.Trim();
-            int phone = Convert.ToInt32(addIPhoneTXT.Text.Trim());
+            long phone = Convert.ToInt64(addIPhoneTXT.Text.Trim());
 
             try
             {
@@ -253,7 +255,7 @@ namespace Assignment_4_Parker_Noah.administratorPage
                     //query
                     string insertQuery = "INSERT INTO Instructor(InstructorID, InstructorFirstName, " +
                         "InstructorLastName, InstructorPhoneNumber)" +
-                        " VALUES('" + memberID + "'," + "'" + fName + "'," + lName + "," + phone + ")";
+                        " VALUES('" + memberID + "','" + fName + "','" + lName + "','" + phone + "')";
 
                     try
                     {
@@ -296,7 +298,7 @@ namespace Assignment_4_Parker_Noah.administratorPage
                 {
                     //query
                     string updateQuery = "Update Section SET "
-                        + "MemberID='" + memberID + "' WHERE SectionID='" + sectionID + "'";
+                        + "Member_ID='" + memberID + "' WHERE SectionID='" + sectionID + "'";
 
                     try
                     {
