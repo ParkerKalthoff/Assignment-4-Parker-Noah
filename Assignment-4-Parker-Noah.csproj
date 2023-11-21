@@ -68,6 +68,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="adminPage\administrator.aspx" />
     <Content Include="Global.asax" />
     <Content Include="instructorPage\instructor.aspx" />
     <Content Include="logonPage\logon.aspx" />
@@ -75,6 +76,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="adminPage\administrator.aspx.cs">
+      <DependentUpon>administrator.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminPage\administrator.aspx.designer.cs">
+      <DependentUpon>administrator.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

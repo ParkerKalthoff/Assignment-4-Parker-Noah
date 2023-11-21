@@ -55,9 +55,14 @@ namespace Assignment_4_Parker_Noah.logonPage
                 FormsAuthentication.RedirectFromLoginPage(HttpContext.Current.Session["nUserName"].ToString(), true);
 
                 Response.Redirect("~/instructorPage/instructor.aspx"); /* Instructor Page */
+            } else if (myUser != null && HttpContext.Current.Session["userType"].ToString().Trim() == "Administrator")
+            {
+                FormsAuthentication.RedirectFromLoginPage(HttpContext.Current.Session["nUserName"].ToString(), true);
+
+                Response.Redirect("~/adminPage/administrator.aspx"); /* admin Page */
             }
-            else
-                Response.Redirect("Logon.aspx", true);
+            else { Response.Redirect("Logon.aspx", true); }
+               
 
 
         }
