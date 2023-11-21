@@ -1,0 +1,24 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Assignment_4_Parker_Noah.MasterPage.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="header">
+            <p><a href="https://github.com/ParkerKalthoff/Assignment-4-Parker-Noah">Github Page</a></p>
+            <p>Hi, <asp:Label runat="server" ID="lblUserName" Text="First Last"></asp:Label> | <asp:LoginStatus runat="server"></asp:LoginStatus></p>
+        </div>
+
+        <div id="mainContent">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

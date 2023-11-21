@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="KarateLinqToSQL">
+  <DataContextMoniker Name="/KarateLinqToSQLDataContext" />
+  <nestedChildShapes>
+    <classShape Id="1a6294de-f489-4a08-8501-3ce6dd9bdc3a" absoluteBounds="3.25, 0.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/KarateLinqToSQLDataContext/Instructor" />
+      <nestedChildShapes>
+        <elementListCompartment Id="343aa0c0-06ed-4525-8cd3-1205797545fc" absoluteBounds="3.2649999999999997, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c8c8ba91-3c16-41ed-8502-37f69b852568" absoluteBounds="1.125, 0.5, 2, 1.9631982421875">
+      <DataClassMoniker Name="/KarateLinqToSQLDataContext/Member" />
+      <nestedChildShapes>
+        <elementListCompartment Id="750459c0-df3a-4384-82c0-4b7063c3093e" absoluteBounds="1.1400000000000001, 0.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="58609484-51fd-423d-9d0f-5442080f3c6b" absoluteBounds="3.375, 3, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/KarateLinqToSQLDataContext/NetUser" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8fd732f9-032b-478e-af2d-edba27e610ee" absoluteBounds="3.3899999999999997, 3.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.3125 : 3); (4.3125 : 2.07859537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/KarateLinqToSQLDataContext/NetUser/NetUser_Instructor" />
+      <nodes>
+        <classShapeMoniker Id="58609484-51fd-423d-9d0f-5442080f3c6b" />
+        <classShapeMoniker Id="1a6294de-f489-4a08-8501-3ce6dd9bdc3a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.375 : 3); (3.125 : 2.4631982421875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/KarateLinqToSQLDataContext/NetUser/NetUser_Member" />
+      <nodes>
+        <classShapeMoniker Id="58609484-51fd-423d-9d0f-5442080f3c6b" />
+        <classShapeMoniker Id="c8c8ba91-3c16-41ed-8502-37f69b852568" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="ede02baa-5677-4f77-a3a0-8d537254d651" absoluteBounds="1.125, 2.625, 2, 1.9631982421875">
+      <DataClassMoniker Name="/KarateLinqToSQLDataContext/Section" />
+      <nestedChildShapes>
+        <elementListCompartment Id="554ccb24-c8b2-4d03-b6f1-bfe441e57886" absoluteBounds="1.1400000000000001, 3.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.375 : 3.82055018880208); (3.125 : 3.82055018880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/KarateLinqToSQLDataContext/NetUser/NetUser_Section" />
+      <nodes>
+        <classShapeMoniker Id="58609484-51fd-423d-9d0f-5442080f3c6b" />
+        <classShapeMoniker Id="ede02baa-5677-4f77-a3a0-8d537254d651" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.125 : 2.4631982421875); (2.125 : 2.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/KarateLinqToSQLDataContext/Member/Member_Section" />
+      <nodes>
+        <classShapeMoniker Id="c8c8ba91-3c16-41ed-8502-37f69b852568" />
+        <classShapeMoniker Id="ede02baa-5677-4f77-a3a0-8d537254d651" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
