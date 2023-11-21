@@ -25,29 +25,27 @@
         <asp:Button ID="addMemberButton" runat="server" CssClass="auto-style1" Height="33px" Text="ADD" Width="116px" OnClick="addMemberButton_Click" />
         </strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>&nbsp;NetUser:</strong></p>
     <p>
-        Member ID:&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-        
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Username:&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="usernameM" runat="server"></asp:TextBox>
-    </p>
-    <p>
         First Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
         <asp:TextBox ID="addMFnameTXT" runat="server"></asp:TextBox>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Password:&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="passwordM" runat="server"></asp:TextBox>
+        &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        
+&nbsp;&nbsp;&nbsp;Username:&nbsp;&nbsp;&nbsp;
+        <asp:TextBox ID="usernameM" runat="server"></asp:TextBox>
     </p>
     <p>
         Last Name:&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="addMLnameTXT" runat="server"></asp:TextBox>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Password:&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:TextBox ID="passwordM" runat="server"></asp:TextBox>
+    </p>
     <p>
         Date Joined:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="addMDateTXT" runat="server"></asp:TextBox>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </p>
     <p>
         Phone Number:&nbsp;&nbsp;
         <asp:TextBox ID="addMPhoneTXT" runat="server"></asp:TextBox>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </p>
     <p>
         Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; <asp:TextBox ID="addMEmailTXT" runat="server"></asp:TextBox>
@@ -55,28 +53,28 @@
     <p>
         &nbsp;</p>
     <p>
+        &nbsp;</p>
+    <p>
         <strong>Add new Instructor: </strong>&nbsp;&nbsp;&nbsp; <strong>
         <asp:Button ID="addInstructorButton" runat="server" CssClass="auto-style1" Height="33px" Text="ADD" Width="107px" OnClick="addInstructorButton_Click" />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NetUser:</strong></p>
     <p>
-        Instructor ID:&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="addIIDTXT" runat="server"></asp:TextBox>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Username:&nbsp;&nbsp;&nbsp;
+        First Name:&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:TextBox ID="addIFnameTXT" runat="server"></asp:TextBox>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Username:&nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="usernameI" runat="server"></asp:TextBox>
     </p>
     <p>
-        First Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="addIFnameTXT" runat="server"></asp:TextBox>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Password:&nbsp;&nbsp;&nbsp;&nbsp;
+        Last Name:&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:TextBox ID="addILnameTXT" runat="server"></asp:TextBox>
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; Password:&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="passwordI" runat="server"></asp:TextBox>
     </p>
     <p>
-        Last Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="addILnameTXT" runat="server"></asp:TextBox>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
-    <p>
         Phone Number:&nbsp;&nbsp; <asp:TextBox ID="addIPhoneTXT" runat="server"></asp:TextBox>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
+    <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
     <p>
         &nbsp;</p>
     <p>

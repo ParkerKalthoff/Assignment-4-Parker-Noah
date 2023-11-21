@@ -209,8 +209,6 @@ namespace Assignment_4_Parker_Noah.administratorPage
                 using (SqlConnection conn = new SqlConnection(connString))
                 {
                     string selectQuery = "SELECT MAX(USERID) FROM NetUser";
-                    //query
-                    
                     string insertQuery2 = "INSERT INTO NetUser(UserName, UserPassword, UserType)" +
                         " VALUES('" + username + "','" + password + "','member')";
 
@@ -222,9 +220,10 @@ namespace Assignment_4_Parker_Noah.administratorPage
                         //connect query
                         
                         SqlCommand sqlcom2 = new SqlCommand(insertQuery2, conn);
-                        int id;
-
                         sqlcom2.ExecuteNonQuery();
+                        
+                        int id;
+                        
                         using (SqlCommand command = new SqlCommand(selectQuery, conn))
                         {
                             id = (int)command.ExecuteScalar();
@@ -232,6 +231,7 @@ namespace Assignment_4_Parker_Noah.administratorPage
                         string insertQuery = "INSERT INTO Member(Member_UserID, MemberFirstName, " +
                         "MemberLastName, MemberDateJoined, MemberPhoneNumber, MemberEmail)" +
                         " VALUES('" + id + "','" + fName + "','" + lName + "','" + dateJoined + "','" + phone + "','" + email + "')";
+
                         SqlCommand sqlcom = new SqlCommand(insertQuery, conn);
                         sqlcom.ExecuteNonQuery();
                        
@@ -271,44 +271,32 @@ namespace Assignment_4_Parker_Noah.administratorPage
                 //sql connection object
                 using (SqlConnection conn = new SqlConnection(connString))
                 {
-                    //query
-                    
-
-
+                    string selectQuery = "SELECT MAX(USERID) FROM NetUser";
                     string insertQuery2 = "INSERT INTO NetUser(UserName, UserPassword, UserType)" +
                         " VALUES('" + username + "','" + password + "','instructor')";
 
-                    string selectQuery = "SELECT MAX(USERID) FROM NetUser";
-                        // SELECT MAX(Salary) AS MaxSal FROM Employee;
                     try
                     {
-
                         //open connection
                         conn.Open();
 
-                        //connect query
                         SqlCommand sqlcom2 = new SqlCommand(insertQuery2, conn);
-                        SqlCommand sqlcom3 = new SqlCommand(selectQuery);
-
                         sqlcom2.ExecuteNonQuery();
+                        
                         int id;
                         
-
                             using (SqlCommand command = new SqlCommand(selectQuery, conn))
                             {
                                 id = (int)command.ExecuteScalar();
                             }
                         
-
                         string insertQuery = "INSERT INTO Instructor(InstructorID, InstructorFirstName, " +
                         "InstructorLastName, InstructorPhoneNumber)" +
                         " VALUES('" + id + "','" + fName + "','" + lName + "','" + phone + "')";
 
-
                         SqlCommand sqlcom = new SqlCommand(insertQuery, conn);
                         sqlcom.ExecuteNonQuery();
                         
-
                         MessageBox.Show("Done");
                         //Refresh data in the DataGridView
                         RefreshData();
