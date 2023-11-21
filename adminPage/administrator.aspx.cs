@@ -9,7 +9,6 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Assignment_4_Parker_Noah.administratorPage
 {
@@ -194,22 +193,26 @@ namespace Assignment_4_Parker_Noah.administratorPage
 
         protected void addMemberButton_Click(object sender, EventArgs e)
         {
-            int memberID = Convert.ToInt32(addMIDTXT.Text.Trim());
+            //int memberID = Convert.ToInt32(addMIDTXT.Text.Trim());
             string fName = addMFnameTXT.Text.Trim();
             string lName = addMLnameTXT.Text.Trim();
             DateTime dateJoined = Convert.ToDateTime(addMDateTXT.Text.Trim());
             long phone = Convert.ToInt64(addMPhoneTXT.Text.Trim());
             string email = addMEmailTXT.Text.Trim();
 
+            string username = usernameM.Text.Trim();
+            string password = passwordM.Text.Trim();
+
             try
             {
                 //sql connection object
                 using (SqlConnection conn = new SqlConnection(connString))
                 {
+                    string selectQuery = "SELECT MAX(USERID) FROM NetUser";
                     //query
-                    string insertQuery = "INSERT INTO Member(Member_UserID, MemberFirstName, " +
-                        "MemberLastName, MemberDateJoined, MemberPhoneNumber, MemberEmail)" +
-                        " VALUES(" + memberID + ",'"  + fName + "','" + lName + "',"+ dateJoined + "," + phone + ",'" + email + "')";
+                    
+                    string insertQuery2 = "INSERT INTO NetUser(UserName, UserPassword, UserType)" +
+                        " VALUES('" + username + "','" + password + "','member')";
 
                     try
                     {
@@ -217,9 +220,22 @@ namespace Assignment_4_Parker_Noah.administratorPage
                         conn.Open();
 
                         //connect query
-                        SqlCommand sqlcom = new SqlCommand(insertQuery, conn);
+                        
+                        SqlCommand sqlcom2 = new SqlCommand(insertQuery2, conn);
+                        int id;
 
+                        sqlcom2.ExecuteNonQuery();
+                        using (SqlCommand command = new SqlCommand(selectQuery, conn))
+                        {
+                            id = (int)command.ExecuteScalar();
+                        }
+                        string insertQuery = "INSERT INTO Member(Member_UserID, MemberFirstName, " +
+                        "MemberLastName, MemberDateJoined, MemberPhoneNumber, MemberEmail)" +
+                        " VALUES('" + id + "','" + fName + "','" + lName + "','" + dateJoined + "','" + phone + "','" + email + "')";
+                        SqlCommand sqlcom = new SqlCommand(insertQuery, conn);
                         sqlcom.ExecuteNonQuery();
+                       
+
                         MessageBox.Show("Done");
                         //Refresh data in the DataGridView
                         RefreshData();
@@ -242,10 +258,13 @@ namespace Assignment_4_Parker_Noah.administratorPage
 
         protected void addInstructorButton_Click(object sender, EventArgs e)
         {
-            int memberID = Convert.ToInt32(addIIDTXT.Text.Trim());
+            //int memberID = Convert.ToInt32(addIIDTXT.Text.Trim());
             string fName = addIFnameTXT.Text.Trim();
             string lName = addILnameTXT.Text.Trim();
             long phone = Convert.ToInt64(addIPhoneTXT.Text.Trim());
+
+            string username = usernameI.Text.Trim();
+            string password = passwordI.Text.Trim();
 
             try
             {
@@ -253,19 +272,43 @@ namespace Assignment_4_Parker_Noah.administratorPage
                 using (SqlConnection conn = new SqlConnection(connString))
                 {
                     //query
-                    string insertQuery = "INSERT INTO Instructor(InstructorID, InstructorFirstName, " +
-                        "InstructorLastName, InstructorPhoneNumber)" +
-                        " VALUES('" + memberID + "','" + fName + "','" + lName + "','" + phone + "')";
+                    
 
+
+                    string insertQuery2 = "INSERT INTO NetUser(UserName, UserPassword, UserType)" +
+                        " VALUES('" + username + "','" + password + "','instructor')";
+
+                    string selectQuery = "SELECT MAX(USERID) FROM NetUser";
+                        // SELECT MAX(Salary) AS MaxSal FROM Employee;
                     try
                     {
+
                         //open connection
                         conn.Open();
 
                         //connect query
-                        SqlCommand sqlcom = new SqlCommand(insertQuery, conn);
+                        SqlCommand sqlcom2 = new SqlCommand(insertQuery2, conn);
+                        SqlCommand sqlcom3 = new SqlCommand(selectQuery);
 
+                        sqlcom2.ExecuteNonQuery();
+                        int id;
+                        
+
+                            using (SqlCommand command = new SqlCommand(selectQuery, conn))
+                            {
+                                id = (int)command.ExecuteScalar();
+                            }
+                        
+
+                        string insertQuery = "INSERT INTO Instructor(InstructorID, InstructorFirstName, " +
+                        "InstructorLastName, InstructorPhoneNumber)" +
+                        " VALUES('" + id + "','" + fName + "','" + lName + "','" + phone + "')";
+
+
+                        SqlCommand sqlcom = new SqlCommand(insertQuery, conn);
                         sqlcom.ExecuteNonQuery();
+                        
+
                         MessageBox.Show("Done");
                         //Refresh data in the DataGridView
                         RefreshData();

@@ -42,31 +42,13 @@ namespace Assignment_4_Parker_Noah.administratorPage
         protected global::System.Web.UI.WebControls.Button addMemberButton;
 
         /// <summary>
-        /// addInstructorButton control.
+        /// usernameM control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button addInstructorButton;
-
-        /// <summary>
-        /// addMIDTXT control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox addMIDTXT;
-
-        /// <summary>
-        /// addIIDTXT control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox addIIDTXT;
+        protected global::System.Web.UI.WebControls.TextBox usernameM;
 
         /// <summary>
         /// addMFnameTXT control.
@@ -78,13 +60,13 @@ namespace Assignment_4_Parker_Noah.administratorPage
         protected global::System.Web.UI.WebControls.TextBox addMFnameTXT;
 
         /// <summary>
-        /// addIFnameTXT control.
+        /// passwordM control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox addIFnameTXT;
+        protected global::System.Web.UI.WebControls.TextBox passwordM;
 
         /// <summary>
         /// addMLnameTXT control.
@@ -96,15 +78,6 @@ namespace Assignment_4_Parker_Noah.administratorPage
         protected global::System.Web.UI.WebControls.TextBox addMLnameTXT;
 
         /// <summary>
-        /// addILnameTXT control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox addILnameTXT;
-
-        /// <summary>
         /// addMDateTXT control.
         /// </summary>
         /// <remarks>
@@ -112,15 +85,6 @@ namespace Assignment_4_Parker_Noah.administratorPage
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox addMDateTXT;
-
-        /// <summary>
-        /// addIPhoneTXT control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox addIPhoneTXT;
 
         /// <summary>
         /// addMPhoneTXT control.
@@ -139,6 +103,69 @@ namespace Assignment_4_Parker_Noah.administratorPage
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox addMEmailTXT;
+
+        /// <summary>
+        /// addInstructorButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button addInstructorButton;
+
+        /// <summary>
+        /// addIIDTXT control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox addIIDTXT;
+
+        /// <summary>
+        /// usernameI control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox usernameI;
+
+        /// <summary>
+        /// addIFnameTXT control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox addIFnameTXT;
+
+        /// <summary>
+        /// passwordI control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox passwordI;
+
+        /// <summary>
+        /// addILnameTXT control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox addILnameTXT;
+
+        /// <summary>
+        /// addIPhoneTXT control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox addIPhoneTXT;
 
         /// <summary>
         /// deleteMemberButton control.
